@@ -1,0 +1,34 @@
+[
+  {
+    "id": "grp-enterprise",
+    "name": "Doanh nghiệp",
+    "description": "Khách hàng doanh nghiệp lớn",
+    "color": "#4F46E5",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "grp-retail",
+    "name": "Bán lẻ",
+    "description": "Khách hàng cá nhân và cửa hàng nhỏ",
+    "color": "#059669",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "grp-vip",
+    "name": "VIP",
+    "description": "Khách hàng chiến lược, doanh thu cao",
+    "color": "#D97706",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "grp-potential",
+    "name": "Tiềm năng",
+    "description": "Khách hàng tiềm năng cần chăm sóc",
+    "color": "#7C3AED",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

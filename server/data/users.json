@@ -1,0 +1,16 @@
+[
+  {
+    "id": "user-admin",
+    "email": "admin@crm.vn",
+    "passwordHash": "$2b$10$iVYEatIwO65.LQz7DMqxJOckgDCQvwJOhIoquhYVZQ8gAjNM6gAdK",
+    "fullName": "Quản trị viên",
+    "role": "admin"
+  },
+  {
+    "id": "user-staff",
+    "email": "staff@crm.vn",
+    "passwordHash": "$2b$10$2HXz/X9k6mE.ea45VZGhGOZe1T2UhGEs3CXjIvCItF2zqWO4yiCki",
+    "fullName": "Nhân viên",
+    "role": "staff"
+  }
+]

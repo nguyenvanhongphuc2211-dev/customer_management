@@ -1,0 +1,34 @@
+[
+  {
+    "id": "note-001",
+    "customerId": "cust-001",
+    "type": "call",
+    "content": "Gọi điện xác nhận đơn hàng Q2, khách hài lòng với dịch vụ.",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2025-05-28T10:30:00.000Z"
+  },
+  {
+    "id": "note-002",
+    "customerId": "cust-001",
+    "type": "email",
+    "content": "Gửi báo giá gói enterprise mở rộng.",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2025-05-20T14:00:00.000Z"
+  },
+  {
+    "id": "note-003",
+    "customerId": "cust-002",
+    "type": "meeting",
+    "content": "Họp review hợp đồng VIP, ký gia hạn 2 năm.",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2025-06-01T14:00:00.000Z"
+  },
+  {
+    "id": "note-004",
+    "customerId": "cust-003",
+    "type": "note",
+    "content": "Khách quan tâm gói cơ bản, cần follow up tuần sau.",
+    "createdBy": "staff@crm.vn",
+    "createdAt": "2025-05-20T09:15:00.000Z"
+  }
+]
