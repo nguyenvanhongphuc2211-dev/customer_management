@@ -1,0 +1,36 @@
+[
+  {
+    "id": "57813a10-e834-48fa-bd8f-56e0d329cec4",
+    "tableId": "table-002",
+    "sessionId": "abdefe7c-e54f-4954-bbc9-83882426bc45",
+    "type": "food",
+    "content": "cay",
+    "status": "done",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-11T09:35:10.196Z",
+    "updatedAt": "2026-06-11T09:35:12.176Z"
+  },
+  {
+    "id": "344490c7-1a70-4be3-b2b9-481abe704841",
+    "tableId": "table-002",
+    "sessionId": "abdefe7c-e54f-4954-bbc9-83882426bc45",
+    "type": "allergy",
+    "content": "đậu",
+    "status": "done",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-11T09:35:23.292Z",
+    "updatedAt": "2026-06-11T09:35:24.786Z"
+  },
+  {
+    "id": "ef744b01-8650-48d7-a30b-1a20b5f9a606",
+    "tableId": "table-002",
+    "sessionId": "954ffed3-925a-4fda-abc8-ced4ce2e6b8d",
+    "type": "food",
+    "content": "Order: 2× Bún chả Hà Nội",
+    "status": "done",
+    "orderId": "d544228c-b262-4bce-94b0-c59c92590898",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:22:59.776Z",
+    "updatedAt": "2026-06-12T11:26:03.227Z"
+  }
+]

@@ -82,9 +82,9 @@ export const CustomerTable = ({
   const allSelected = customers.length > 0 && customers.every((c) => selectedIds.has(c.id));
 
   return (
-    <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-sm">
-      <table className="min-w-full divide-y divide-slate-200">
-        <thead className="bg-slate-50">
+    <div className="overflow-x-auto card">
+      <table className="min-w-full divide-y divide-slate-200 dark:divide-slate-700">
+        <thead className="table-head">
           <tr>
             {canEdit && (
               <th scope="col" className="px-4 py-3">
@@ -140,7 +140,7 @@ export const CustomerTable = ({
             </tr>
           ) : (
             customers.map((customer) => (
-              <tr key={customer.id} className="transition-colors hover:bg-slate-50/80">
+              <tr key={customer.id} className="table-row-hover">
                 {canEdit && (
                   <td className="px-4 py-3.5">
                     <input

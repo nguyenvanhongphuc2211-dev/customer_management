@@ -12,5 +12,33 @@
     "passwordHash": "$2b$10$2HXz/X9k6mE.ea45VZGhGOZe1T2UhGEs3CXjIvCItF2zqWO4yiCki",
     "fullName": "Nhân viên",
     "role": "staff"
+  },
+  {
+    "id": "2db7417b-cade-43b5-a426-676eab817296",
+    "email": "nhanvien0001@gmail.com",
+    "passwordHash": "$2b$10$v13mGBY.6bchA5gM4/0rXudBEubrO1PodjdkqYrm973Frc21C1QrO",
+    "fullName": "nv 0001",
+    "role": "staff"
+  },
+  {
+    "id": "4b7589e5-cb7a-4338-ae11-b458514c1199",
+    "email": "nhanvien0002@gmail.com",
+    "passwordHash": "$2b$10$Xcu4NdZ7yMWAFxpYfR6jaeS5p2epGMgp5NDN0j/L4WAyimTwzCJvW",
+    "fullName": "nv0002",
+    "role": "cashier"
+  },
+  {
+    "id": "8a60c68b-eb5d-4912-93be-bcd9d552df93",
+    "email": "nhanvien0003@gmail.com",
+    "passwordHash": "$2b$10$ZR/Jhvt0PoU2fhv6LJZsBODi2RXz2KvNA.et6hxRLS5bMA.MCXSyq",
+    "fullName": "nv0003",
+    "role": "kitchen"
+  },
+  {
+    "id": "5b53c455-55df-4fad-a3d4-957c1a7e79c2",
+    "email": "nhanvien0004@gmail.com",
+    "passwordHash": "$2b$10$z65zSggcrzic4flPljhjpuxbrefNIiiTEQtNmXkcxrksk59UsTIwm",
+    "fullName": "nv0004",
+    "role": "head_chef"
   }
 ]

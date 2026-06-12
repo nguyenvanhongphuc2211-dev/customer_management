@@ -46,6 +46,7 @@ export const customerSchema = z.object({
   lastContactAt: z.string(),
   createdAt: z.string(),
   updatedAt: z.string(),
+  deletedAt: z.string().nullable().optional(),
 });
 
 export const paginatedCustomerSchema = z.object({

@@ -26,22 +26,17 @@ export const DeleteConfirmModal = ({
     >
       <button
         type="button"
-        className="absolute inset-0 bg-slate-900/50"
+        className="absolute inset-0 bg-slate-900/50 dark:bg-black/60"
         aria-label="Đóng"
         onClick={onCancel}
       />
-      <div className="relative w-full max-w-md rounded-xl bg-white p-6 shadow-xl">
-        <h2 id="delete-modal-title" className="text-lg font-semibold text-slate-900">
+      <div className="relative w-full max-w-md card p-6 shadow-xl">
+        <h2 id="delete-modal-title" className="page-title text-lg">
           {title}
         </h2>
-        <p className="mt-2 text-sm text-slate-600">{message}</p>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{message}</p>
         <div className="mt-6 flex justify-end gap-3">
-          <button
-            type="button"
-            onClick={onCancel}
-            disabled={isLoading}
-            className="cursor-pointer rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 disabled:opacity-50"
-          >
+          <button type="button" onClick={onCancel} disabled={isLoading} className="btn-secondary">
             Hủy
           </button>
           <button
@@ -50,7 +45,7 @@ export const DeleteConfirmModal = ({
             disabled={isLoading}
             className="cursor-pointer rounded-lg bg-red-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-red-700 disabled:opacity-50"
           >
-            {isLoading ? 'Đang xóa...' : 'Xóa'}
+            {isLoading ? 'Đang xử lý...' : 'Xác nhận'}
           </button>
         </div>
       </div>

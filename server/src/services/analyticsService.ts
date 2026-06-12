@@ -8,7 +8,7 @@ export const createAnalyticsService = (
 ) => ({
   async getAnalytics(): Promise<AnalyticsData> {
     const [records, groups] = await Promise.all([
-      customerRepo.getAllRecords(),
+      customerRepo.getActiveRecords(),
       groupRepo.findAll(),
     ]);
 

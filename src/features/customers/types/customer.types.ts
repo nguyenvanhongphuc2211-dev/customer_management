@@ -28,6 +28,7 @@ export interface Customer {
   lastContactAt: string;
   createdAt: string;
   updatedAt: string;
+  deletedAt?: string | null;
 }
 
 export interface GetCustomersParams {
@@ -38,6 +39,7 @@ export interface GetCustomersParams {
   groupId?: string;
   sortBy?: keyof Customer | 'group';
   sortOrder?: 'asc' | 'desc';
+  deleted?: 'exclude' | 'only';
 }
 
 export interface PaginatedResponse<T> {
@@ -70,10 +72,16 @@ export interface CreateCustomerGroupDto {
 export type UpdateCustomerGroupDto = Partial<CreateCustomerGroupDto>;
 
 export interface BulkActionDto {
-  action: 'delete' | 'updateStatus' | 'updateGroup';
+  action: 'delete' | 'updateStatus' | 'updateGroup' | 'restore' | 'permanentDelete';
   ids: string[];
   status?: CustomerStatus;
   groupId?: string;
+}
+
+export interface ImportResult {
+  imported: number;
+  skipped: number;
+  errors: { row: number; message: string }[];
 }
 
 export interface AnalyticsData {

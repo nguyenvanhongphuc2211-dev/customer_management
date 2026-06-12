@@ -1,197 +1,85 @@
-# CRM Customer Management
+# CRM + Quản lý Nhà hàng
 
-Hệ thống quản lý khách hàng (CRM) được xây dựng bằng React, TypeScript và Vite nhằm hỗ trợ doanh nghiệp quản lý thông tin khách hàng một cách hiệu quả, trực quan và dễ sử dụng.
+Hệ thống full-stack quản lý **khách hàng (CRM)** và **vận hành nhà hàng** (100 bàn), lưu trữ bằng **file JSON** (không cần cài database).
 
----
+## Tính năng chính
 
-## 🚀 Tính năng chính
+### CRM
+- Dashboard KH: tìm kiếm, lọc, sắp xếp, phân trang, thống kê
+- CRUD khách hàng & nhóm (admin), soft delete, import/export CSV
+- Lịch sử liên hệ, analytics, backup/khôi phục JSON, dark mode
 
-### Quản lý khách hàng
+### Nhà hàng
+- Sơ đồ **100 bàn** (4 khu vực), mở/đóng bàn, đặt bàn trước
+- **Order món** từ thực đơn → gửi xuống bếp (hủy order khi chưa làm)
+- Gắn **khách CRM** khi mở bàn
+- **Thực đơn** (admin/bếp trưởng: thêm, sửa, xóa món)
+- **Yêu cầu bếp** — NV bếp xem, bếp trưởng đánh dấu xong
+- **Thu ngân** — hóa đơn, in bill, lưu JSON; ghi chú bàn lưu kèm hóa đơn
 
-- Xem danh sách khách hàng
-- Thêm khách hàng mới
-- Chỉnh sửa thông tin khách hàng
-- Xóa khách hàng
-- Tìm kiếm khách hàng
+### Phân quyền (5 vai trò)
 
-### Xác thực dữ liệu
+| Vai trò | Quyền chính |
+|---------|-------------|
+| `admin` | Toàn quyền |
+| `staff` | Phục vụ: sơ đồ bàn, order, đặt bàn, xem KH |
+| `cashier` | Thu ngân: bàn thanh toán, hóa đơn |
+| `kitchen` | Xem yêu cầu bếp |
+| `head_chef` | Xem + hoàn thành yêu cầu, quản lý thực đơn |
 
-- Kiểm tra dữ liệu đầu vào bằng Zod
-- Quản lý form với React Hook Form
+## Tech stack
 
-### Quản lý API
+React · TypeScript · Vite · Tailwind · TanStack Query · React Hook Form · Zod · Axios · Express · Vitest
 
-- Gọi API bằng Axios
-- Caching và quản lý trạng thái dữ liệu với React Query
-
-### Điều hướng
-
-- Routing với React Router DOM
-
-### Kiểm thử
-
-- Unit Test bằng Vitest
-- Testing Library cho React Components
-
----
-
-## 🛠️ Công nghệ sử dụng
-
-| Công nghệ | Mục đích |
-|------------|------------|
-| React 19 | Xây dựng giao diện |
-| TypeScript | Kiểm tra kiểu dữ liệu |
-| Vite | Build & Development |
-| React Router DOM | Điều hướng |
-| React Hook Form | Quản lý form |
-| Zod | Validate dữ liệu |
-| Axios | Giao tiếp API |
-| React Query | Quản lý dữ liệu bất đồng bộ |
-| TailwindCSS | Styling |
-| Vitest | Unit Testing |
-
----
-
-## 📂 Cấu trúc dự án
-
-```bash
-crm-customer-management/
-│
-├── public/
-│
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── hooks/
-│   ├── services/
-│   ├── routes/
-│   ├── types/
-│   ├── utils/
-│   ├── App.tsx
-│   └── main.tsx
-│
-├── server/
-│
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
----
-
-## ⚙️ Cài đặt
-
-### Clone repository
+## Cài đặt & chạy
 
 ```bash
 git clone https://github.com/nguyenvanhongphuc2211-dev/customer_management.git
-```
-
-### Di chuyển vào thư mục dự án
-
-```bash
 cd customer_management
-```
-
-### Cài đặt dependencies
-
-```bash
 npm install
-```
-
----
-
-## ▶️ Chạy ứng dụng
-
-### Frontend
-
-```bash
-npm run dev
-```
-
-Mặc định:
-
-```text
-http://localhost:5173
-```
-
-### Backend Server
-
-```bash
-npm run dev:server
-```
-
-### Chạy đồng thời Frontend + Backend
-
-```bash
+npm install --prefix server
 npm run dev:all
 ```
 
----
+- Frontend: http://localhost:5173
+- API: http://localhost:3001
 
-## 🏗️ Build Production
+## Tài khoản demo
 
-```bash
-npm run build
-```
+| Email | Mật khẩu | Vai trò |
+|-------|----------|---------|
+| `admin@crm.vn` | `admin123` | Admin |
+| `staff@crm.vn` | `staff123` | Nhân viên phục vụ |
 
-Kết quả build sẽ nằm trong:
+Tạo thêm tài khoản (thu ngân, bếp, bếp trưởng) tại **Cài đặt → Quản lý tài khoản** (admin).
 
-```bash
-dist/
-```
+## Luồng vận hành
 
----
+1. **Staff** mở bàn → order món từ thực đơn
+2. **Bếp** nhận yêu cầu → **Bếp trưởng** đánh dấu xong
+3. **Staff** chuyển bàn **Thanh toán**
+4. **Thu ngân** lập hóa đơn → in bill → bàn tự **Dọn bàn**
+5. **Staff** bấm **Bàn sẵn sàng** → **Trống** (xóa ghi chú/order cũ trên bàn)
 
-## 🧪 Chạy kiểm thử
-
-### Chạy toàn bộ test
-
-```bash
-npm run test
-```
-
-### Watch mode
-
-```bash
-npm run test:watch
-```
-
----
-
-## 📦 Scripts
+## Scripts
 
 | Lệnh | Chức năng |
-|--------|------------|
-| npm run dev | Chạy frontend |
-| npm run dev:server | Chạy backend |
-| npm run dev:all | Chạy toàn bộ hệ thống |
-| npm run build | Build production |
-| npm run preview | Preview bản build |
-| npm run test | Chạy test |
-| npm run test:watch | Test watch mode |
+|------|-----------|
+| `npm run dev:all` | Chạy frontend + backend |
+| `npm run build` | Build frontend |
+| `npm run build --prefix server` | Build backend |
+| `npm test` | Chạy unit test |
 
----
+## Lưu ý deploy
 
-## 🎯 Mục tiêu dự án
+- Đặt `JWT_SECRET` trong môi trường production
+- Backup JSON trước khi import/restore hàng loạt
+- Dữ liệu realtime: frontend tự refresh mỗi 5–10 giây (bếp, bàn, thu ngân)
 
-- Áp dụng React + TypeScript vào dự án thực tế.
-- Xây dựng hệ thống CRM cơ bản.
-- Thực hành quản lý state và API.
-- Áp dụng validation và testing trong dự án Frontend.
+## Tác giả
 
----
+**Nguyễn Văn Hồng Phúc** — [GitHub](https://github.com/nguyenvanhongphuc2211-dev)
 
-## 👨‍💻 Tác giả
-
-**Nguyễn Văn Hồng Phúc**
-
-GitHub:  
-:contentReference[oaicite:0]{index=0}
-
----
-
-## 📄 License
+## License
 
 MIT License

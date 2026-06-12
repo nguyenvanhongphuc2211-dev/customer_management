@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-import type { AuthUser } from '../types/auth.types.js';
+import type { AuthUser, UserRole } from '../types/auth.types.js';
 
 const JWT_SECRET = process.env.JWT_SECRET ?? 'crm-dev-secret-change-in-production';
 
@@ -32,3 +32,13 @@ export const requireAdmin = (req: Request, res: Response, next: NextFunction): v
   }
   next();
 };
+
+export const requireRoles =
+  (...roles: UserRole[]) =>
+  (req: Request, res: Response, next: NextFunction): void => {
+    if (!req.user || !roles.includes(req.user.role)) {
+      res.status(403).json({ message: 'Bạn không có quyền thực hiện thao tác này' });
+      return;
+    }
+    next();
+  };

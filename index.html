@@ -11,6 +11,14 @@
       rel="stylesheet"
     />
     <title>CRM — Quản lý Khách hàng</title>
+    <script>
+      (function () {
+        var t = localStorage.getItem('crm_theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

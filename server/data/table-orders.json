@@ -1,0 +1,19 @@
+[
+  {
+    "id": "d544228c-b262-4bce-94b0-c59c92590898",
+    "tableId": "table-002",
+    "sessionId": "954ffed3-925a-4fda-abc8-ced4ce2e6b8d",
+    "items": [
+      {
+        "menuItemId": "menu-003",
+        "menuItemName": "Bún chả Hà Nội",
+        "quantity": 2,
+        "unitPrice": 60000
+      }
+    ],
+    "status": "done",
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:22:59.774Z",
+    "updatedAt": "2026-06-12T11:26:03.229Z"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "area-floor1",
+    "name": "Tầng 1",
+    "description": "Khu chính — 25 bàn",
+    "sortOrder": 1
+  },
+  {
+    "id": "area-floor2",
+    "name": "Tầng 2",
+    "description": "Khu gia đình — 25 bàn",
+    "sortOrder": 2
+  },
+  {
+    "id": "area-vip",
+    "name": "VIP",
+    "description": "Phòng riêng — 25 bàn",
+    "sortOrder": 3
+  },
+  {
+    "id": "area-garden",
+    "name": "Sân vườn",
+    "description": "Không gian mở — 25 bàn",
+    "sortOrder": 4
+  }
+]

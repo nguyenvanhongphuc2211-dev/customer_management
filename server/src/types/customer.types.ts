@@ -24,6 +24,7 @@ export interface CustomerRecord {
   lastContactAt: string;
   createdAt: string;
   updatedAt: string;
+  deletedAt?: string | null;
 }
 
 export interface Customer extends Omit<CustomerRecord, 'groupId'> {
@@ -38,6 +39,7 @@ export interface GetCustomersParams {
   groupId?: string;
   sortBy?: string;
   sortOrder?: 'asc' | 'desc';
+  deleted?: 'exclude' | 'only';
 }
 
 export interface PaginatedResponse<T> {
@@ -74,10 +76,16 @@ export interface CustomerGroupWithCount extends CustomerGroup {
 }
 
 export interface BulkActionDto {
-  action: 'delete' | 'updateStatus' | 'updateGroup';
+  action: 'delete' | 'updateStatus' | 'updateGroup' | 'restore' | 'permanentDelete';
   ids: string[];
   status?: CustomerStatus;
   groupId?: string;
+}
+
+export interface ImportResult {
+  imported: number;
+  skipped: number;
+  errors: { row: number; message: string }[];
 }
 
 export interface AnalyticsData {

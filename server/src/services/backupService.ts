@@ -1,7 +1,19 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-const DATA_FILES = ['customers.json', 'customer-groups.json', 'contact-notes.json', 'users.json'];
+const DATA_FILES = [
+  'customers.json',
+  'customer-groups.json',
+  'contact-notes.json',
+  'users.json',
+  'table-areas.json',
+  'tables.json',
+  'table-sessions.json',
+  'table-notes.json',
+  'table-invoices.json',
+  'menu.json',
+  'table-orders.json',
+];
 
 export const createBackupService = (dataDir: string) => {
   const backupDir = path.join(dataDir, 'backups');

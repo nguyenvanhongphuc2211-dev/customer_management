@@ -12,6 +12,7 @@ import type {
   ContactNote,
   GetCustomersParams,
   PaginatedResponse,
+  ImportResult,
   UpdateCustomerDto,
   UpdateCustomerGroupDto,
 } from '../types/customer.types';
@@ -39,6 +40,25 @@ export const createCustomerService = (httpClient: AxiosInstance) => ({
 
   delete: async (id: string): Promise<void> => {
     await httpClient.delete(`/customers/${id}`);
+  },
+
+  restore: async (id: string): Promise<Customer> => {
+    const { data } = await httpClient.post(`/customers/${id}/restore`);
+    return customerSchema.parse(data);
+  },
+
+  permanentDelete: async (id: string): Promise<void> => {
+    await httpClient.delete(`/customers/${id}/permanent`);
+  },
+
+  importCsv: async (csv: string): Promise<ImportResult> => {
+    const { data } = await httpClient.post<ImportResult>('/customers/import', { csv });
+    return data;
+  },
+
+  downloadImportTemplate: async (): Promise<Blob> => {
+    const { data } = await httpClient.get('/customers/export-template', { responseType: 'blob' });
+    return data;
   },
 
   bulkAction: async (payload: BulkActionDto): Promise<{ affected: number }> => {

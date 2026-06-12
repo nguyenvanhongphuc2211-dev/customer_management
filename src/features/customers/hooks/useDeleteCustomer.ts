@@ -27,7 +27,7 @@ export const useDeleteCustomer = () => {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [CUSTOMERS_QUERY_KEY] });
-      showToast('Xóa khách hàng thành công', 'success');
+      showToast('Đã chuyển vào thùng rác', 'success');
     },
     onError: (_err, _id, context) => {
       if (context?.previous) {

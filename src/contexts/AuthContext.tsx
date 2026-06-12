@@ -1,5 +1,20 @@
 import { authService } from '@/features/auth/services';
-import type { AuthUser, LoginDto } from '@/features/auth/types/auth.types';
+import {
+  canEditCustomers,
+  canManageInvoices,
+  canManageMenu,
+  canManageTables,
+  canMarkKitchenDone,
+  canViewAnalytics,
+  canViewBillingTables,
+  canViewCustomers,
+  canViewFloorPlan,
+  canViewKitchenQueue,
+  canViewMenu,
+  canViewTrash,
+  ROLE_LABELS,
+} from '@/features/auth/constants/roles';
+import type { AuthUser, LoginDto, UserRole } from '@/features/auth/types/auth.types';
 import {
   createContext,
   useCallback,
@@ -10,10 +25,27 @@ import {
   type ReactNode,
 } from 'react';
 
+interface AuthPermissions {
+  canEdit: boolean;
+  canManageTables: boolean;
+  canMarkKitchenDone: boolean;
+  canManageInvoices: boolean;
+  canManageMenu: boolean;
+  canViewMenu: boolean;
+  canViewKitchenQueue: boolean;
+  canViewBillingTables: boolean;
+  canViewCustomers: boolean;
+  canViewFloorPlan: boolean;
+  canViewAnalytics: boolean;
+  canViewTrash: boolean;
+}
+
 interface AuthContextValue {
   user: AuthUser | null;
   isLoading: boolean;
   canEdit: boolean;
+  permissions: AuthPermissions;
+  roleLabel: string;
   login: (dto: LoginDto) => Promise<void>;
   logout: () => void;
 }
@@ -51,16 +83,33 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       .finally(() => setIsLoading(false));
   }, []);
 
-  const value = useMemo(
-    () => ({
+  const value = useMemo(() => {
+    const role = user?.role as UserRole | undefined;
+    const permissions: AuthPermissions = {
+      canEdit: canEditCustomers(role ?? 'staff'),
+      canManageTables: canManageTables(role ?? 'staff'),
+      canMarkKitchenDone: canMarkKitchenDone(role ?? 'staff'),
+      canManageInvoices: canManageInvoices(role ?? 'staff'),
+      canManageMenu: canManageMenu(role ?? 'staff'),
+      canViewMenu: canViewMenu(role ?? 'staff'),
+      canViewKitchenQueue: canViewKitchenQueue(role ?? 'staff'),
+      canViewBillingTables: canViewBillingTables(role ?? 'staff'),
+      canViewCustomers: canViewCustomers(role ?? 'staff'),
+      canViewFloorPlan: canViewFloorPlan(role ?? 'staff'),
+      canViewAnalytics: canViewAnalytics(role ?? 'staff'),
+      canViewTrash: canViewTrash(role ?? 'staff'),
+    };
+
+    return {
       user,
       isLoading,
-      canEdit: user?.role === 'admin',
+      canEdit: permissions.canEdit,
+      permissions,
+      roleLabel: role ? ROLE_LABELS[role] : '',
       login,
       logout,
-    }),
-    [user, isLoading, login, logout],
-  );
+    };
+  }, [user, isLoading, login, logout]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "fe539092-7a85-4fbc-87ac-0121ec2b1f15",
+    "invoiceNumber": "INV-20260612-001",
+    "tableId": "table-001",
+    "tableLabel": "B1",
+    "sessionId": "c18a506b-9616-4b45-a524-36d3c2a82420",
+    "guestCount": 3,
+    "items": [
+      {
+        "description": "Test mon",
+        "quantity": 1,
+        "unitPrice": 50000
+      }
+    ],
+    "subtotal": 50000,
+    "tax": 0,
+    "total": 50000,
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:21:55.546Z"
+  },
+  {
+    "id": "60642492-6916-4743-bb60-716008eec57b",
+    "invoiceNumber": "INV-20260612-002",
+    "tableId": "table-002",
+    "tableLabel": "B2",
+    "sessionId": "954ffed3-925a-4fda-abc8-ced4ce2e6b8d",
+    "guestCount": 3,
+    "items": [
+      {
+        "description": "Pho",
+        "quantity": 2,
+        "unitPrice": 65000
+      }
+    ],
+    "subtotal": 130000,
+    "tax": 0,
+    "total": 130000,
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:22:59.801Z"
+  },
+  {
+    "id": "0e570b44-381f-49c1-80e7-5d3f36930629",
+    "invoiceNumber": "INV-20260612-003",
+    "tableId": "table-003",
+    "tableLabel": "B3",
+    "sessionId": "00074c9b-edc6-424f-9226-f85ce3ad9aae",
+    "guestCount": 2,
+    "items": [
+      {
+        "description": "Com",
+        "quantity": 1,
+        "unitPrice": 45000
+      }
+    ],
+    "notes": [
+      {
+        "id": "bea5649f-1ead-4aab-9899-5f6fae3661da",
+        "type": "allergy",
+        "content": "di ung tom",
+        "status": "pending",
+        "createdBy": "admin@crm.vn",
+        "createdAt": "2026-06-12T11:29:09.246Z"
+      }
+    ],
+    "subtotal": 45000,
+    "tax": 0,
+    "total": 45000,
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:29:09.254Z"
+  },
+  {
+    "id": "f1c33b5b-fdf4-4af6-942f-2e5ba7c533a2",
+    "invoiceNumber": "INV-20260612-004",
+    "tableId": "table-001",
+    "tableLabel": "B1",
+    "sessionId": "4d385da3-e9b6-41b6-8664-fb0a64cc2eb4",
+    "guestCount": 4,
+    "items": [
+      {
+        "description": "Bún chả Hà Nội",
+        "quantity": 2,
+        "unitPrice": 60000
+      },
+      {
+        "description": "Cơm tấm sườn bì chả",
+        "quantity": 2,
+        "unitPrice": 55000
+      }
+    ],
+    "notes": [
+      {
+        "id": "14027752-e134-4a26-a9f6-887dfbbf0079",
+        "type": "food",
+        "content": "Order: 2× Bún chả Hà Nội, 2× Cơm tấm sườn bì chả — không ớt",
+        "status": "done",
+        "createdBy": "admin@crm.vn",
+        "createdAt": "2026-06-12T11:30:43.330Z"
+      }
+    ],
+    "subtotal": 230000,
+    "tax": 0,
+    "total": 230000,
+    "createdBy": "admin@crm.vn",
+    "createdAt": "2026-06-12T11:31:51.020Z"
+  }
+]

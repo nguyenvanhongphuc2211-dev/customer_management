@@ -1,4 +1,4 @@
-export type UserRole = 'admin' | 'staff';
+export type UserRole = 'admin' | 'staff' | 'cashier' | 'kitchen' | 'head_chef';
 
 export interface UserRecord {
   id: string;
@@ -23,6 +23,13 @@ export interface LoginDto {
 export interface LoginResponse {
   token: string;
   user: AuthUser;
+}
+
+export interface CreateUserDto {
+  email: string;
+  password: string;
+  fullName: string;
+  role: UserRole;
 }
 
 declare global {

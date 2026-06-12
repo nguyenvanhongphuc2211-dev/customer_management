@@ -1,0 +1,51 @@
+[
+  {
+    "id": "d874da01-bfa8-4443-bbfb-d04ee97a55d9",
+    "tableId": "table-001",
+    "guestCount": 2,
+    "openedAt": "2026-06-11T09:12:03.733Z",
+    "closedAt": "2026-06-11T09:39:03.432Z",
+    "openedBy": "admin@crm.vn"
+  },
+  {
+    "id": "abdefe7c-e54f-4954-bbc9-83882426bc45",
+    "tableId": "table-002",
+    "guestCount": 4,
+    "openedAt": "2026-06-11T09:34:59.455Z",
+    "closedAt": "2026-06-11T09:39:06.018Z",
+    "openedBy": "admin@crm.vn"
+  },
+  {
+    "id": "c18a506b-9616-4b45-a524-36d3c2a82420",
+    "tableId": "table-001",
+    "guestCount": 3,
+    "openedAt": "2026-06-11T10:29:07.838Z",
+    "closedAt": "2026-06-12T11:21:55.549Z",
+    "openedBy": "nhanvien0001@gmail.com"
+  },
+  {
+    "id": "954ffed3-925a-4fda-abc8-ced4ce2e6b8d",
+    "tableId": "table-002",
+    "guestCount": 3,
+    "openedAt": "2026-06-11T10:38:01.405Z",
+    "closedAt": "2026-06-12T11:22:59.804Z",
+    "openedBy": "nhanvien0001@gmail.com"
+  },
+  {
+    "id": "00074c9b-edc6-424f-9226-f85ce3ad9aae",
+    "tableId": "table-003",
+    "guestCount": 2,
+    "openedAt": "2026-06-12T11:29:09.236Z",
+    "closedAt": "2026-06-12T11:29:09.257Z",
+    "openedBy": "admin@crm.vn"
+  },
+  {
+    "id": "4d385da3-e9b6-41b6-8664-fb0a64cc2eb4",
+    "tableId": "table-001",
+    "guestCount": 4,
+    "openedAt": "2026-06-12T11:30:20.543Z",
+    "closedAt": "2026-06-12T11:31:51.023Z",
+    "openedBy": "admin@crm.vn",
+    "customerId": "cust-003"
+  }
+]
